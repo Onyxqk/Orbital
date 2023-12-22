@@ -1,0 +1,102 @@
+#board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+  
+#body {
+  background-color: #737373;
+}
+
+.menu-bar {
+    height: 50px;
+    width: max-content;
+    margin: auto;
+    border: 1px solid black;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    left: 50%;
+    overflow-x: scroll;
+}
+
+.menu-button {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    color: white;
+}
+
+
+.menu-button:hover, .menu-button:active {
+   color: #0069d9;
+}
+
+.lane {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.lane-header {
+    text-align: center;
+    font-family: sans-serif;
+    padding: 10px;
+    font-weight: bold;
+    color: black;
+}
+
+.card {
+    background-color: #D8D8D8;
+    color: black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    font-family: sans-serif;
+}
+
+.form {
+    padding-top: 10px;
+    margin: auto;
+    text-align: center;
+}
+
+.form-label {
+    margin-bottom: 5px;
+    font-family: sans-serif;
+    color: white;
+}
+
+.form-input {
+    background-color: white;
+    font-size: 16px;
+    padding: 6px;
+    border: none;
+    border-radius: 3px; 
+    color: black;
+}
+
+
+.form-button {
+    font-size: 16px;
+    padding: 10px 28px;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-family: sans-serif;
+    background: black;
+    color: white;
+}
+
+.form-button:hover, .form-button:active {
+    border-color: #0069d9;
+    color: #0069d9;
+}

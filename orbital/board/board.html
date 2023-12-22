@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Orbital Boards</title>
+<link rel="stylesheet" type="text/css" href="board.css">
+<link rel="icon" href="../orbital.png" type="image/png">
+<link rel="icon" href="../orbital.png" type="image/png" sizes="192x192">
+
+<body id="body">
+
+    <div id="menu-bar" class="menu-bar">
+        <button id="add-item-button" class="menu-button" onclick="addItem()">Add Item</button>
+        <button id="remove-item-button" class="menu-button" onclick="removeItem()">Remove Item</button>
+        <button id="add-lane-button" class="menu-button" onclick="addLane()">Add Lane</button>
+        <button id="remove-lane-button" class="menu-button" onclick="removeLane()">Remove Lane</button>
+    </div>
+
+    <div id="add-item-form" class="form" style="display:none;">
+        <label for="add-item-input" class="form-label">Add Item:</label><br>
+        <input type="text" id="add-item-input" class="form-input" name="add-item"><br>
+        <button id="save-add-item-button" class="form-button" onclick="saveAddItem()">Save</button>
+        <button id="cancel-add-item-button" class="form-button" onclick="cancelAddItem()">Cancel</button>
+    </div>
+
+    <div id="edit-item-form" class="form" style="display:none;">
+        <label for="edit-item-input" class="form-label">Edit Item:</label><br>
+        <input type="text" id="edit-item-input" class="form-input" name="edit-item"><br>
+        <button id="save-edit-item-button" class="form-button">Save</button>
+        <button id="cancel-edit-item-button" class="form-button" onclick="cancelEditItem()">Cancel</button>
+    </div>
+
+    <div id="item-remove-form" class="form" style="display:none;">
+        <label for="item-remove-select" class="form-label">Remove Item:</label><br>
+        <select id="item-remove-select" class="form-input">
+          <option value="0">Item 1</option>
+          <option value="1">Item 2</option>
+          <option value="2">Item 3</option>
+          <option value="3">Item 4</option>
+        </select><br>
+        <button id="confirm-remove-item-button" class="form-button" onclick="confirmRemoveItem()">Confirm</button>
+        <button id="cancel-remove-item-button" class="form-button" onclick="cancelRemoveItem()">Cancel</button>
+      </div>
+
+    <div id="add-lane-form" class="form" style="display:none;">
+        <label for="add-lane-input" class="form-label">Add Lane:</label><br>
+        <input type="text" id="add-lane-input" class="form-input" name="add-lane"><br>
+        <button id="save-add-lane-button" class="form-button" onclick="saveAddLane()">Save</button>
+        <button id="cancel-add-lane-button" class="form-button" onclick="cancelAddLane()">Cancel</button>
+    </div>
+
+
+    <div id="edit-lane-form" class="form" style="display:none;">
+        <label for="edit-lane-input" class="form-label">Edit Lane:</label><br>
+        <input type="text" id="edit-lane-input" class="form-input" name="edit-lane"><br>
+        <button id="save-edit-lane-button" class="form-button">Save</button>
+        <button id="cancel-edit-lane-button" class="form-button" onclick="cancelEditLane()">Cancel</button>
+    </div>
+
+    <div id="lane-remove-form" class="form" style="display:none;">
+        <label for="lane-remove-select" class="form-label">Remove Lane:</label><br>
+        <select id="lane-remove-select" class="form-input">
+          <option value="0">To Do</option>
+          <option value="1">In Progress</option>
+          <option value="2">Done</option>
+        </select><br>
+        <button id="confirm-remove-lane-button" class="form-button" onclick="confirmRemoveLane()">Confirm</button>
+        <button id="cancel-remove-lane-button" class="form-button" onclick="cancelRemoveLane()">Cancel</button>
+      </div>
+
+    <div id="board">
+        <div class="lane">
+            <div class="lane-header" tabindex="0">To Do</div>
+            <div class="card" tabindex="0">Item 1</div>
+            <div class="card" tabindex="0">Item 2</div>
+        </div>
+        <div class="lane">
+            <div class="lane-header" tabindex="0">In Progress</div>
+            <div class="card" tabindex="0">Item 3</div>
+        </div>
+        <div class="lane">
+            <div class="lane-header" tabindex="0">Done</div>
+            <div class="card" tabindex="0">Item 4</div>
+        </div>
+    </div>
+    <script src="board.js"></script>
+</body>
+
+</html>
