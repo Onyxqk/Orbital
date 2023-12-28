@@ -1,18 +1,13 @@
 const board = document.getElementById('board'),
     addItemForm = document.getElementById('add-item-form'),
     editItemForm = document.getElementById('edit-item-form'),
-    itemRemoveForm = document.getElementById('item-remove-form'),
     addItemButton = document.getElementById('add-item-button'),
-    removeItemButton = document.getElementById('remove-item-button'),
-    confirmRemoveItemButton = document.getElementById('confirm-remove-item-button'),
-    cancelRemoveItemButton = document.getElementById('cancel-remove-item-button'),
     saveAddItemButton = document.getElementById('save-add-item-button'),
     cancelAddItemButton = document.getElementById('cancel-add-item-button'),
     addItemInput = document.getElementById('add-item-input'),
     saveEditItemButton = document.getElementById('save-edit-item-button'),
     cancelEditItemButton = document.getElementById('cancel-edit-item-button'),
     editItemInput = document.getElementById('edit-item-input'),
-    itemRemoveSelect = document.getElementById('item-remove-select'),
     addLaneForm = document.getElementById('add-lane-form'),
     editLaneForm = document.getElementById('edit-lane-form'),
     laneRemoveForm = document.getElementById('lane-remove-form'),
@@ -28,32 +23,6 @@ const board = document.getElementById('board'),
     editLaneInput = document.getElementById('edit-lane-input'),
     laneRemoveSelect = document.getElementById('lane-remove-select'),
     body = document.getElementById('body');
-
-function toggleDarkMode() {
-    body.classList.toggle('dark-mode');
-    document.querySelector(".menu-bar").classList.toggle("dark-mode");
-    document.querySelectorAll(".menu-button").forEach(element => {
-        element.classList.toggle("dark-mode")
-    });
-    document.querySelectorAll(".card").forEach(element => {
-        element.classList.toggle("dark-mode")
-    });
-    document.querySelectorAll(".lane").forEach(element => {
-        element.classList.toggle("dark-mode")
-    });
-    document.querySelectorAll(".lane-header").forEach(element => {
-        element.classList.toggle("dark-mode")
-    });
-    document.querySelectorAll(".form-input").forEach(element => {
-        element.classList.toggle("dark-mode")
-    });
-    document.querySelectorAll(".form-button").forEach(element => {
-        element.classList.toggle("dark-mode")
-    });
-    document.querySelectorAll(".form-label").forEach(element => {
-        element.classList.toggle("dark-mode")
-    });
-}
 
 function addItem() {
     addItemForm.style.display = 'block';
@@ -78,27 +47,7 @@ function saveAddItem() {
 
     addItemForm.style.display = 'none';
     addItemInput.value = '';
-}
-
-function removeItem() {
-    itemRemoveForm.style.display = 'block';
-}
-
-function confirmRemoveItem() {
-    const itemIndex = itemRemoveSelect.value;
-    const lane = itemRemoveSelect.parentElement;
-    lane.removeChild(lane.children[itemIndex]);
-
-    const options = itemRemoveSelect.querySelectorAll('option');
-    for (let i = 0; i < options.length; i++) {
-        if (options[i].value > itemIndex) {
-            options[i].value--;
-        }
-    }
-}
-
-function cancelRemoveItem() {
-    itemRemoveForm.style.display = 'none';
+    makeItemDraggable(newCard)
 }
 
 function addLane() {
@@ -131,6 +80,7 @@ function saveAddLane() {
 
     addLaneForm.style.display = 'none';
     addLaneInput.value = '';
+    makeLaneDroppable(newLane)
 }
 
 

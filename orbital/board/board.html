@@ -11,7 +11,6 @@
 
     <div id="menu-bar" class="menu-bar">
         <button id="add-item-button" class="menu-button" onclick="addItem()">Add Item</button>
-        <button id="remove-item-button" class="menu-button" onclick="removeItem()">Remove Item</button>
         <button id="add-lane-button" class="menu-button" onclick="addLane()">Add Lane</button>
         <button id="remove-lane-button" class="menu-button" onclick="removeLane()">Remove Lane</button>
     </div>
@@ -29,18 +28,6 @@
         <button id="save-edit-item-button" class="form-button">Save</button>
         <button id="cancel-edit-item-button" class="form-button" onclick="cancelEditItem()">Cancel</button>
     </div>
-
-    <div id="item-remove-form" class="form" style="display:none;">
-        <label for="item-remove-select" class="form-label">Remove Item:</label><br>
-        <select id="item-remove-select" class="form-input">
-          <option value="0">Item 1</option>
-          <option value="1">Item 2</option>
-          <option value="2">Item 3</option>
-          <option value="3">Item 4</option>
-        </select><br>
-        <button id="confirm-remove-item-button" class="form-button" onclick="confirmRemoveItem()">Confirm</button>
-        <button id="cancel-remove-item-button" class="form-button" onclick="cancelRemoveItem()">Cancel</button>
-      </div>
 
     <div id="add-lane-form" class="form" style="display:none;">
         <label for="add-lane-input" class="form-label">Add Lane:</label><br>

@@ -51,6 +51,7 @@
     padding: 10px;
     font-weight: bold;
     color: black;
+    cursor: pointer;
 }
 
 .card {
