@@ -74,7 +74,7 @@
     color: #0069d9;
 }
 
-.remove-item-button {
+.remove-item-button, .remove-lane-button {
     border-radius: 2rem;
     border: none;
     background-color: black;
@@ -87,7 +87,7 @@
     margin-top: -3px;
 }
 
-.remove-item-button:hover {
+.remove-item-button:hover, .remove-lane-button:hover {
     background-color: crimson;
 }
 
@@ -123,7 +123,7 @@
     height: 1.5rem;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 1rem;
+    margin-top: 0.625rem;
     display: block;
 }
 
@@ -142,6 +142,7 @@
     background-color: #343434;
     height: max-content;
     width: max-content;
+    max-width: 90%;
     padding: .5rem;
     cursor: pointer;
 }
