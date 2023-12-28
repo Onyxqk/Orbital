@@ -8,26 +8,13 @@
 <link rel="icon" href="../orbital.png" type="image/png" sizes="192x192">
 
 <body id="body">
-
-    <div id="menu-bar" class="menu-bar">
-        <button id="add-item-button" class="menu-button" onclick="addItem()">Add Item</button>
-        <button id="add-lane-button" class="menu-button" onclick="addLane()">Add Lane</button>
-    </div>
-
+    <h1 class="board-name" id="board-name" contenteditable="true" tabindex="0">Orbital Board</h1>
     <div id="add-item-form" class="form" style="display:none;">
         <label for="add-item-input" class="form-label">Add Item:</label><br>
         <input type="text" id="add-item-input" class="form-input" name="add-item"><br>
         <button id="save-add-item-button" class="form-button" onclick="saveAddItem()">Save</button>
         <button id="cancel-add-item-button" class="form-button" onclick="cancelAddItem()">Cancel</button>
     </div>
-
-    <div id="edit-item-form" class="form" style="display:none;">
-        <label for="edit-item-input" class="form-label">Edit Item:</label><br>
-        <input type="text" id="edit-item-input" class="form-input" name="edit-item"><br>
-        <button id="save-edit-item-button" class="form-button">Save</button>
-        <button id="cancel-edit-item-button" class="form-button" onclick="cancelEditItem()">Cancel</button>
-    </div>
-
     <div id="add-lane-form" class="form" style="display:none;">
         <label for="add-lane-input" class="form-label">Add Lane:</label><br>
         <input type="text" id="add-lane-input" class="form-input" name="add-lane"><br>
@@ -35,49 +22,47 @@
         <button id="cancel-add-lane-button" class="form-button" onclick="cancelAddLane()">Cancel</button>
     </div>
 
-    <div id="edit-lane-form" class="form" style="display:none;">
-        <label for="edit-lane-input" class="form-label">Edit Lane:</label><br>
-        <input type="text" id="edit-lane-input" class="form-input" name="edit-lane"><br>
-        <button id="save-edit-lane-button" class="form-button">Save</button>
-        <button id="cancel-edit-lane-button" class="form-button" onclick="cancelEditLane()">Cancel</button>
-    </div>
-
     <div id="board">
         <div class="lane">
             <div class="lane-header" tabindex="0">
-                <span class="lane-title">To Do</span>
-                <button class="remove-item-button" onclick="removeLane(this)">X</button>
+                <span class="lane-title" contenteditable="true">To Do</span>
+                <button class="remove-item-button" title="Remove Lane" onclick="removeLane(this)">X</button>
             </div>
             <div class="card" tabindex="0">
-                <span class="item-header">Item 1</span>
-                <button class="remove-item-button" onclick="removeItem(this)">X</button>
+                <span class="item-header" contenteditable="true">Item 1</span>
+                <button class="remove-item-button" title="Remove Item" onclick="removeItem(this)">X</button>
             </div>
             <div class="card" tabindex="0">
-                <span class="item-header">Item 2</span>
-                <button class="remove-item-button" onclick="removeItem(this)">X</button>
+                <span class="item-header" contenteditable="true">Item 2</span>
+                <button class="remove-item-button" title="Remove Item" onclick="removeItem(this)">X</button>
             </div>
+            <button class="add-item-button" title="Add Item" onclick="addItem()">+</button>
         </div>
         <div class="lane">
             <div class="lane-header" tabindex="0">
-                <span class="lane-title">In Progress</span>
-                <button class="remove-item-button" onclick="removeLane(this)">X</button>
+                <span class="lane-title" contenteditable="true">In Progress</span>
+                <button class="remove-item-button" title="Remove Lane" onclick="removeLane(this)">X</button>
             </div>
             <div class="card" tabindex="0">
-                <span class="item-header">Item 3</span>
-                <button class="remove-item-button" onclick="removeItem(this)">X</button>
+                <span class="item-header" contenteditable="true">Item 3</span>
+                <button class="remove-item-button" title="Remove Item" onclick="removeItem(this)">X</button>
             </div>
+            <button class="add-item-button" title="Add Item" onclick="addItem()">+</button>
         </div>
         <div class="lane">
             <div class="lane-header" tabindex="0">
-                <span class="lane-title">Done</span>
-                <button class="remove-item-button" onclick="removeLane(this)">X</button>
+                <span class="lane-title" contenteditable="true">Done</span>
+                <button class="remove-item-button" title="Remove Lane" onclick="removeLane(this)">X</button>
             </div>
             <div class="card" tabindex="0">
-                <span class="item-header">Item 4</span>
-                <button class="remove-item-button" onclick="removeItem(this)">X</button>
+                <span class="item-header" contenteditable="true">Item 4</span>
+                <button class="remove-item-button" title="Remove Item" onclick="removeItem(this)">X</button>
             </div>
+            <button class="add-item-button" title="Add Item" onclick="addItem()">+</button>
         </div>
     </div>
+    <button class="add-lane-button" title="Add Lane" onclick="addLane()">+</button>
+
     <script src="board.js"></script>
 </body>
 

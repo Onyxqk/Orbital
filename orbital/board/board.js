@@ -1,35 +1,22 @@
 const board = document.getElementById('board'),
     addItemForm = document.getElementById('add-item-form'),
-    editItemForm = document.getElementById('edit-item-form'),
     addItemButton = document.getElementById('add-item-button'),
     saveAddItemButton = document.getElementById('save-add-item-button'),
     cancelAddItemButton = document.getElementById('cancel-add-item-button'),
     addItemInput = document.getElementById('add-item-input'),
-    saveEditItemButton = document.getElementById('save-edit-item-button'),
-    cancelEditItemButton = document.getElementById('cancel-edit-item-button'),
-    editItemInput = document.getElementById('edit-item-input'),
     addLaneForm = document.getElementById('add-lane-form'),
-    editLaneForm = document.getElementById('edit-lane-form'),
     addLaneButton = document.getElementById('add-lane-button'),
     saveAddLaneButton = document.getElementById('save-add-lane-button'),
     cancelAddLaneButton = document.getElementById('cancel-add-lane-button'),
-    saveEditLaneButton = document.getElementById('save-edit-lane-button'),
-    cancelEditLaneButton = document.getElementById('cancel-edit-lane-button'),
     addLaneInput = document.getElementById('add-lane-input'),
-    editLaneInput = document.getElementById('edit-lane-input'),
     body = document.getElementById('body');
-
+    
 function addItem() {
     addItemForm.style.display = 'block';
-
 }
 
 function cancelAddItem() {
     addItemForm.style.display = 'none';
-}
-
-function cancelEditItem() {
-    editItemForm.style.display = 'none';
 }
 
 function saveAddItem() {
@@ -51,10 +38,6 @@ function addLane() {
 }
 function cancelAddLane() {
     addLaneForm.style.display = 'none';
-}
-
-function cancelEditLane() {
-    editLaneForm.style.display = 'none';
 }
 
 function saveAddLane() {
@@ -100,45 +83,6 @@ function removeLane(button) {
     var lane = button.parentNode.parentNode;
     lane.parentNode.removeChild(lane);
 }
-
-function editItem(event) {
-    if (event.target.classList.contains('item-header')) {
-        const card = event.target;
-        editItemInput.value = card.innerText;
-        editItemForm.style.display = 'block';
-
-        saveEditItemButton.addEventListener('click', () => {
-            const itemText = editItemInput.value;
-            if (!itemText) return;
-
-            card.innerText = itemText;
-            editItemForm.style.display = 'none';
-            editItemInput.value = '';
-        });
-    }
-}
-
-function editLane(event) {
-    if (event.target.classList.contains('lane-title')) {
-        const laneHeader = event.target;
-        editLaneInput.value = laneHeader.innerText;
-        editLaneForm.style.display = 'block';
-
-        saveEditLaneButton.addEventListener('click', () => {
-            const laneText = editLaneInput.value;
-            if (!laneText) return;
-
-            laneHeader.innerText = laneText;
-            editLaneForm.style.display = 'none';
-            editLaneInput.value = '';
-        });
-    }
-}
-
-board.addEventListener('click', (event) => {
-    editItem(event);
-    editLane(event);
-});
 
 const makeItemDraggable = (item) => {
     item.setAttribute('draggable', true);
